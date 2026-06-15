@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shawn | Grade 10 Portfolio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* --- DESIGN SYSTEM & VARIABLES --- */
@@ -51,7 +50,7 @@
         .section-title {
             font-size: 2.25rem;
             font-weight: 700;
-            margin-bottom: 48px;
+            margin-bottom: 64px;
             text-align: center;
             position: relative;
         }
@@ -59,7 +58,7 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
             width: 60px;
@@ -68,7 +67,7 @@
             border-radius: 2px;
         }
 
-        /* --- FADE-IN ANIMATION CLASSES --- */
+        /* --- FADE-IN ANIMATION --- */
         .fade-in-element {
             opacity: 0;
             transform: translateY(30px);
@@ -86,7 +85,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(11, 15, 25, 0.9);
+            background-color: rgba(11, 15, 25, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -117,6 +116,7 @@
             display: flex;
             list-style: none;
             gap: 32px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -227,7 +227,8 @@
         .about-image-wrapper svg {
             width: 40%;
             height: 40%;
-            color: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            opacity: 0.8;
         }
 
         .about-image-wrapper::before {
@@ -361,3 +362,243 @@
             top: 0;
             height: 100%;
             width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--bg-tertiary));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 48px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -41px;
+            top: 6px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--bg-primary);
+            border: 4px solid var(--accent);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content {
+            background-color: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-image-wrapper { max-width: 300px; margin: 0 auto; }
+            
+            .menu-toggle { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-secondary);
+                padding: 24px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+            }
+            .nav-links.active { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">SHAWN</a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#academics">Academics</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="fade-in-element">
+        <span class="hero-badge">Grade 10 Student Portfolio</span>
+        <h1>Hi, I'm <span>Shawn</span></h1>
+        <p class="hero-p">A passionate student builder focused on combining design, technology, and creative problem-solving.</p>
+        <a href="#projects" class="btn">
+            View My Work
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+    </section>
+
+    <section id="about" class="fade-in-element">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-image-wrapper">
+                <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path></svg>
+            </div>
+            <div class="about-content">
+                <h3>My Journey</h3>
+                <p>I'm currently in the 10th grade, exploring the intersection of web development, engineering, and digital creation. I love turning complex problems into clean, usable code and elegant structures.</p>
+                <p>When I'm not studying or coding, you can find me exploring design workflows, reading technical blogs, or collaborating on school team projects.</p>
+                <div class="interests-tags">
+                    <span class="tag">💡 Web Development</span>
+                    <span class="tag">🎨 UI Design</span>
+                    <span class="tag">🤖 Robotics</span>
+                    <span class="tag">📊 Data Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in-element">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <div class="project-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3>Personal Portfolio</h3>
+                    <p>A modern, highly performant portfolio website built from scratch to present academic milestones and design achievements.</p>
+                </div>
+                <div>
+                    <div class="project-tools">
+                        <span class="tool-badge">HTML5</span>
+                        <span class="tool-badge">CSS3</span>
+                        <span class="tool-badge">JavaScript</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        Live Demo
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>STEM Robot Control</h3>
+                    <p>Developed an interface program running over Bluetooth to read telemetry variables and safely navigate a mock planetary rover.</p>
+                </div>
+                <div>
+                    <div class="project-tools">
+                        <span class="tool-badge">C++</span>
+                        <span class="tool-badge">Arduino</span>
+                        <span class="tool-badge">Logic</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        Code Repository
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="academics" class="fade-in-element">
+        <h2 class="section-title">Academic Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Sept 2025 - Present</div>
+                <div class="timeline-content">
+                    <h3>Grade 10 Studies</h3>
+                    <p>Focusing heavily on Advanced Mathematics, Computer Science foundations, and Physics engineering modules.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">June 2025</div>
+                <div class="timeline-content">
+                    <h3>Science Fair — First Place</h3>
+                    <p>Designed a miniature smart greenhouse automation loop monitoring soil humidity and managing power output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shawn. All rights reserved. Created with passion.</p>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile drawer when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-element').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
