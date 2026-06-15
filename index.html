@@ -411,21 +411,121 @@
             font-size: 0.95rem;
         }
 
+        /* --- CONTACT SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 48px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            color: var(--accent);
+        }
+
+        .contact-form {
+            background-color: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 32px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background-color: var(--bg-tertiary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 16px;
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
         /* --- FOOTER --- */
         footer {
             background-color: var(--bg-secondary);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 40px 24px;
             text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-to-top {
+            background: none;
+            border: none;
             color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
             font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .back-to-top:hover {
+            color: var(--accent);
         }
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             #hero h1 { font-size: 2.5rem; }
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
             .about-image-wrapper { max-width: 300px; margin: 0 auto; }
+            .footer-content { flex-direction: column; gap: 20px; }
             
             .menu-toggle { display: block; }
             .nav-links {
@@ -457,6 +557,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#academics">Academics</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -464,7 +565,7 @@
     <section id="hero" class="fade-in-element">
         <span class="hero-badge">Grade 10 Student Portfolio</span>
         <h1>Hi, I'm <span>Shawn</span></h1>
-        <p class="hero-p">A passionate student builder focused on combining design, technology, and creative problem-solving.</p>
+        <p class="hero-p">An aspiring mathematician and physicist dedicated to exploring complex structures, structural analytical reasoning, and rigorous problem-solving workflows.</p>
         <a href="#projects" class="btn">
             View My Work
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
@@ -478,38 +579,38 @@
                 <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path></svg>
             </div>
             <div class="about-content">
-                <h3>My Journey</h3>
-                <p>I'm currently in the 10th grade, exploring the intersection of web development, engineering, and digital creation. I love turning complex problems into clean, usable code and elegant structures.</p>
-                <p>When I'm not studying or coding, you can find me exploring design workflows, reading technical blogs, or collaborating on school team projects.</p>
+                <h3>My Journey & Aspirations</h3>
+                <p>I am a Grade 10 student with a profound curiosity regarding the foundational truths of our universe. My long-term academic vision points squarely toward pursuing a rigorous university undergraduate major within higher Mathematics or theoretical Physics.</p>
+                <p>Outside of the classroom, I challenge my critical spatial and strategy instincts by playing Chinese and international chess. I balance this focused analytical mindset through fast-paced team dynamics on the field, playing competitive basketball and soccer, while keeping a close eye on global athletics via the FIFA World Cup and the NBA.</p>
                 <div class="interests-tags">
-                    <span class="tag">💡 Web Development</span>
-                    <span class="tag">🎨 UI Design</span>
-                    <span class="tag">🤖 Robotics</span>
-                    <span class="tag">📊 Data Analysis</span>
+                    <span class="tag">📐 Mathematics</span>
+                    <span class="tag">🌌 Physics</span>
+                    <span class="tag">♟️ Chess</span>
+                    <span class="tag">⚽ Sports Analysis</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="fade-in-element">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Academic & Special Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div>
                     <div class="project-icon">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
                     </div>
-                    <h3>Personal Portfolio</h3>
-                    <p>A modern, highly performant portfolio website built from scratch to present academic milestones and design achievements.</p>
+                    <h3>Statistical Modeling in Professional Sports</h3>
+                    <p>An exhaustive analysis using data modeling methodologies to track key predictive efficiency metrics across historic NBA and World Cup championship rosters.</p>
                 </div>
                 <div>
                     <div class="project-tools">
-                        <span class="tool-badge">HTML5</span>
-                        <span class="tool-badge">CSS3</span>
-                        <span class="tool-badge">JavaScript</span>
+                        <span class="tool-badge">Data Analysis</span>
+                        <span class="tool-badge">Excel</span>
+                        <span class="tool-badge">Modeling</span>
                     </div>
                     <a href="#" class="project-link">
-                        Live Demo
+                        View Case Study
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                 </div>
@@ -518,19 +619,18 @@
             <div class="project-card">
                 <div>
                     <div class="project-icon">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                     </div>
-                    <h3>STEM Robot Control</h3>
-                    <p>Developed an interface program running over Bluetooth to read telemetry variables and safely navigate a mock planetary rover.</p>
+                    <h3>Algorithmic Combinatorics & Chess</h3>
+                    <p>An investigation exploring multi-turn variations within specific endgame systems, standardizing mathematical tracking models for optimal moves.</p>
                 </div>
                 <div>
                     <div class="project-tools">
-                        <span class="tool-badge">C++</span>
-                        <span class="tool-badge">Arduino</span>
-                        <span class="tool-badge">Logic</span>
+                        <span class="tool-badge">Graph Theory</span>
+                        <span class="tool-badge">Game Logic</span>
                     </div>
                     <a href="#" class="project-link">
-                        Code Repository
+                        Read Blueprint
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                 </div>
@@ -539,34 +639,89 @@
     </section>
 
     <section id="academics" class="fade-in-element">
-        <h2 class="section-title">Academic Timeline</h2>
+        <h2 class="section-title">Academic Distinctions</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">Sept 2025 - Present</div>
+                <div class="timeline-date">Academic Performance</div>
                 <div class="timeline-content">
-                    <h3>Grade 10 Studies</h3>
-                    <p>Focusing heavily on Advanced Mathematics, Computer Science foundations, and Physics engineering modules.</p>
+                    <h3>Full Mark GPA — Mathematics</h3>
+                    <p>Maintaining a perfect grade point average distribution across all advanced level math courses, displaying complete technical mastery of secondary curricula.</p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">June 2025</div>
+                <div class="timeline-date">Euclid Mathematics Contest</div>
                 <div class="timeline-content">
-                    <h3>Science Fair — First Place</h3>
-                    <p>Designed a miniature smart greenhouse automation loop monitoring soil humidity and managing power output.</p>
+                    <h3>Score of 84 — Top 2.5% Globally</h3>
+                    <p>Achieved Second Place standing locally and ranked among the elite top 2.5% across the world on the internationally recognized University of Waterloo Euclid examination.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">AMC 10B Competition</div>
+                <div class="timeline-content">
+                    <h3>Second Place — Top 7.5% Nationwide</h3>
+                    <p>Secured a top 7.5% placement bracket across the strict American Mathematics Competitions framework, earning second place honors within the scholastic division.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="contact" class="fade-in-element">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Please feel free to connect if you represent a university admissions board, competitive academic circle, or athletic collaborative group.</p>
+                <div class="contact-links">
+                    <a href="mailto:shawn@example.com" class="contact-item">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        shawn@example.com
+                    </a>
+                    <a href="#" class="contact-item">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path></svg>
+                        linkedin.com/in/shawn-math
+                    </a>
+                    <a href="#" class="contact-item">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg>
+                        github.com/shawn-math
+                    </a>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Shawn. All rights reserved. Created with passion.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Shawn. Academic Portfolio.</p>
+            <button class="back-to-top" id="backToTop">
+                Back to Top
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 10l7-7 7 7M12 3v18"></path></svg>
+            </button>
+        </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Responsive Navigation Drawer Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -574,17 +729,29 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile drawer when link is clicked
+        // Close Mobile Drawer upon Intersecting Click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        // Intersection Observer for Scroll Animations
+        // Back to Top Interface Functional Loop
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form Submission Functional validation Mockup
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you, your message has been transmitted successfully! I will reach out shortly.');
+            document.getElementById('contactForm').reset();
+        });
+
+        // Intersection Observer Configuration for Scroll Transitions
         const observerOptions = {
             root: null,
-            threshold: 0.1,
+            threshold: 0.15,
             rootMargin: "0px"
         };
 
